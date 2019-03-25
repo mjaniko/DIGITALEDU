@@ -23,7 +23,6 @@ public class LoopsExample {
             System.out.println("სტუდენტი:"+element);
         }
 
-
         System.out.println("[----------------]");
 
         int studentSize = STUDENT_LIST.length;
