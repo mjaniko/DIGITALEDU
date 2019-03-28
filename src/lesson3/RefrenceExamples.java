@@ -25,7 +25,7 @@ public class RefrenceExamples {
 
     public static void checkNameAndChange(Dog d) {
         if (d.getName().equals("Max")) {
-            System.out.println("ძაღლის სახელია Max");
+            System.out.println("კი ნამდვილად  Max");
         }
         // შევუცვალოთ ძაღლს სახელი "Rex"
         d.setName("Rex");
@@ -33,32 +33,40 @@ public class RefrenceExamples {
 
     public static void checkNameAndMakeNewInstance(Dog d) {
         if (d.getName().equals("Max")) {
-            System.out.println("ძაღლის სახელია Max");
+            System.out.println("კი ნამდვილად  Max");
         }
 
-        // ვქმნით სრულიად დამოუკიდებელ ძაღლს. d points now to a new Dog Instance "Rex"
+        d.setName("Bobika");
+
+
+        // ეს არის ლოკალური ცვლადი, რომელსაც მიენიჭა ახალი ობიექტის ინსტანსი,
+        // მაგრამ ამ მეთოდს გარეთ ვერ გადის და შიგნით კვდება.
         d = new Dog("Rex");
 
-        System.out.println("რა ქვია ძაღლს?:" + d.getName());
+
+        System.out.println("ახალი ინსტანსი ობიექტის, რომელიც ლოკალურია:"+d.getName());
     }
 
     public static void main(String[] args) {
         // ვქმნით ძაღლს სახელად Max
-        Dog aDog = new Dog("Max");
+        Dog DOG_MAX = new Dog("Max");
 
         // ვქმნით ახალ ცვლადს, რომელიც იგივე Max ის Instance-ს მიეკუთვნება
-        Dog oldDog = aDog;
+        Dog DOG_REX = DOG_MAX;
+
 
         // შევამოწმოთ ძაღლის არსებული სახელი და შევუცვალოთ Rex-დ
-        //checkNameAndChange(aDog);
+        //checkNameAndChange(DOG_REX);
 
         // მაგალითი ახალი ინსტანსის შექმნა
-        //checkNameAndMakeNewInstance(aDog);
+        checkNameAndMakeNewInstance(DOG_REX);
+
+        System.out.println("საბოლოო სახელია DOG_REX:"+DOG_REX.getName());
 
         // რა ქვია ძაღლს?
-        if (aDog == oldDog) {
-            System.out.println("aDog ძაღლის სახელია:" + aDog.getName());
-            System.out.println("oldDog ძაღლის სახელია:" + oldDog.getName());
+        if (DOG_MAX == DOG_REX) {
+            System.out.println("aDog ძაღლის სახელია:" + DOG_MAX.getName());
+            System.out.println("oldDog ძაღლის სახელია:" + DOG_REX.getName());
         }
     }
 }
