@@ -1,5 +1,7 @@
 package lesson3.inheritance;
 
+import lesson4.AbstractCharacter;
+
 public class RaceManager {
 
     public static final double DEFAULT_HEIGHT = 4.00;
@@ -7,22 +9,17 @@ public class RaceManager {
 
     public static void main(String[] args) {
 
-
-        Character character = new Character(DEFAULT_RACE, DEFAULT_HEIGHT);
-
-        System.out.println("[პროგრამისტის ახალი გმირი]");
-
-
-        System.out.println(character);
-
-        printCharacter(character);
-
         // განათებულია
         Human humanKnowladgable = new Human();
+        humanKnowladgable.setHungry(false);
+        humanKnowladgable.setSleeping(true); // ესეიგი ეძინება
         humanKnowladgable.setHasKnowladge(false);
         System.out.println("[განათლებული ადამიანები]");
 
+
         printCharacter(humanKnowladgable);
+        humanKnowladgable.hungry();
+        humanKnowladgable.sleep();
 
 
         // ეს გაუნათლებელია
@@ -46,16 +43,24 @@ public class RaceManager {
         Elf whiteElf = new Elf();
         printCharacter(whiteElf);
 
+        whiteElf.weapon("მშვილდი");
+
+        Elf whiteElfWithSword = new Elf();
+        printCharacter(whiteElfWithSword);
+        whiteElfWithSword.weapon("გრძელ ხმალს");
+
         //printCharacter(whiteElf.getRace(), whiteElf.getHeight(), whiteElf.getColor());
 
         Orc orc = new Orc();
         printCharacter(orc);
+        orc.relax();
 
         //printCharacter(orc.getRace(), orc.getHeight(), orc.getColor());
 
 
         Gnom gnom = new Gnom();
         printCharacter(gnom);
+
 
         //printCharacter(gnom.getRace(), gnom.getHeight(), gnom.getColor());
 
@@ -65,9 +70,9 @@ public class RaceManager {
     }
 
 
-    static void printCharacter(Character character){
-        System.out.println("რასა: "+character.getRace()+" სიმაღლე: "+character.getHeight()+" კანის ფერი: "+character.getColor());
+    static void printCharacter(AbstractCharacter character){
         System.out.println();
+        System.out.println("რასა: "+character.getRace()+" სიმაღლე: "+character.getHeight()+" კანის ფერი: "+character.getColor());
     }
 
     static void printCharacter(String race, double height, String color){

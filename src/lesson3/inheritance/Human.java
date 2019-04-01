@@ -1,6 +1,8 @@
 package lesson3.inheritance;
 
-public final class Human extends Character {
+import lesson4.AbstractCharacter;
+
+public final class Human extends AbstractCharacter {
 
     // გაუნათლებელი
     private boolean hasKnowladge = false;
@@ -15,5 +17,15 @@ public final class Human extends Character {
 
     public void setHasKnowladge(boolean hasKnowladge) {
         this.hasKnowladge = hasKnowladge;
+    }
+
+    @Override
+    public boolean isSwiming() {
+        return false;
+    }
+
+    @Override
+    public boolean isRuning() {
+        return false;
     }
 }

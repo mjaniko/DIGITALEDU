@@ -1,6 +1,8 @@
 package lesson3.inheritance;
 
-public  class DarkElf extends Character {
+import lesson4.AbstractCharacter;
+
+public class DarkElf extends AbstractCharacter {
 
     public DarkElf() {
         super("ELF", 1.80);
@@ -12,5 +14,13 @@ public  class DarkElf extends Character {
     }
 
 
+    @Override
+    public boolean isSwiming() {
+        return false;
+    }
 
+    @Override
+    public boolean isRuning() {
+        return false;
+    }
 }

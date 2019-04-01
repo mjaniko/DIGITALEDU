@@ -1,11 +1,9 @@
-package lesson3.inheritance;
+package lesson4;
 
-import lesson4.ICharacterAction;
+public abstract class AbstractCharacter implements ICharacterAction {
 
-/**
- * ამ შემთხვევას ჩვენს პროგრამაში თავდაცვის უნარი არ გააჩნია Instanc-ისგან
- */
-public class Character implements ICharacterAction {
+    protected abstract boolean isSwiming();
+    protected abstract boolean isRuning();
 
     private String race;
     private double height;
@@ -15,7 +13,7 @@ public class Character implements ICharacterAction {
     private boolean isHungry = false;
     private boolean isRelaxing = false;
 
-    public Character(String race, double height) {
+    public AbstractCharacter(String race, double height) {
         this.race = race;
         this.height = height;
     }
