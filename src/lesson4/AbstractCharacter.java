@@ -1,6 +1,8 @@
 package lesson4;
 
-public abstract class AbstractCharacter implements ICharacterAction {
+import java.io.Serializable;
+
+public abstract class AbstractCharacter implements ICharacterAction, Serializable {
 
     protected abstract boolean isSwiming();
     protected abstract boolean isRuning();

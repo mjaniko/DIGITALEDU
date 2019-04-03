@@ -28,4 +28,10 @@ public final class Human extends AbstractCharacter {
     public boolean isRuning() {
         return false;
     }
+
+
+    @Override
+    public String toString() {
+       return "{race:"+this.getRace()+", height:"+this.getHeight()+"}";
+    }
 }

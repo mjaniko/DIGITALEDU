@@ -2,10 +2,12 @@ package lesson3.inheritance;
 
 import lesson4.ICharacterAction;
 
+import java.io.Serializable;
+
 /**
  * ამ შემთხვევას ჩვენს პროგრამაში თავდაცვის უნარი არ გააჩნია Instanc-ისგან
  */
-public class Character implements ICharacterAction {
+public class Character implements ICharacterAction, Serializable {
 
     private String race;
     private double height;

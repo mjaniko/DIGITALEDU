@@ -5,7 +5,7 @@ import lesson4.AbstractCharacter;
 public class DarkElf extends AbstractCharacter {
 
     public DarkElf() {
-        super("ELF", 1.80);
+        super("DARK_ELF", 1.80);
         this.setColor("DARK");
     }
 
