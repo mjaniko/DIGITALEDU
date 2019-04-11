@@ -6,10 +6,12 @@ import lesson8.holder.MenuHolder;
 import lesson8.holder.ProductHolder;
 import lesson8.model.Category;
 import lesson8.model.Product;
+import org.apache.log4j.spi.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 /**
  * მენიუ
@@ -25,8 +27,8 @@ import java.util.Map;
  */
 public class MenuManager {
 
-
-
+    public static Logger LOGGER = Logger.getLogger(MenuManager.class.getName());
+    public static org.apache.log4j.Logger APACHE_LOGGER = org.apache.log4j.Logger.getLogger(MenuManager.class.getName());
 
     public static void main(String[] args) {
 
@@ -85,5 +87,17 @@ public class MenuManager {
         System.out.println(AnsiColors.ANSI_RED+"[------------]");
 
 
+        LOGGER.info("დაბეჭდე ინფორმაცია");
+        LOGGER.warning("დაბეჭდე შეტყობინება");
+        LOGGER.severe("დაბეჭდე შეტყობინება");
+        LOGGER.fine("დაბეჭდე შეცდომა");
+        LOGGER.fine("დაბეჭდე შეცდომა");
+
+
+
+        APACHE_LOGGER.info("დაბეჭდე ინფორმაცია");
+        APACHE_LOGGER.warn("დაბეჭდე ინფორმაცია");
+        APACHE_LOGGER.error("დაბეჭდე ინფორმაცია");
+        APACHE_LOGGER.debug("დაბეჭდე ინფორმაცია");
     }
 }
