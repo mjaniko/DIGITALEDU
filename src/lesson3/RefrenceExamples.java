@@ -56,10 +56,10 @@ public class RefrenceExamples {
 
 
         // შევამოწმოთ ძაღლის არსებული სახელი და შევუცვალოთ Rex-დ
-        //checkNameAndChange(DOG_REX);
+        checkNameAndChange(DOG_REX);
 
         // მაგალითი ახალი ინსტანსის შექმნა
-        checkNameAndMakeNewInstance(DOG_REX);
+        //checkNameAndMakeNewInstance(DOG_REX);
 
         System.out.println("საბოლოო სახელია DOG_REX:"+DOG_REX.getName());
 

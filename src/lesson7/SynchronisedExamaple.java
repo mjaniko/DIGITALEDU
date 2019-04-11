@@ -1,7 +1,7 @@
 package lesson7;
 
 
-public class ThreadPoolManager {
+public class SynchronisedExamaple {
 
     static class MovementThread implements Runnable {
 
